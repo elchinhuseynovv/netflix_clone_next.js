@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Netflix Clone",
-  description: "A modern Netflix clone built with Next.js",
+  title: "Azeflix",
+  description: "A modern streaming platform built with Next.js",
 };
 
 export default function RootLayout({

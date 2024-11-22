@@ -5,9 +5,11 @@ import { cn } from "@/lib/utils";
 import { Play, Search, Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,24 +29,74 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-8">
-          <Link href="/" className="text-red-600 font-bold text-2xl">NETFLIX</Link>
+          <Link href="/" className="text-red-600 font-bold text-2xl">AZEFLIX</Link>
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium hover:text-primary/80">Home</Link>
-            <Link href="/tv-shows" className="text-sm font-medium hover:text-primary/80">TV Shows</Link>
-            <Link href="/movies" className="text-sm font-medium hover:text-primary/80">Movies</Link>
-            <Link href="/new" className="text-sm font-medium hover:text-primary/80">New & Popular</Link>
+            <Link 
+              href="/" 
+              className={cn(
+                "text-sm font-medium hover:text-primary/80",
+                pathname === "/" && "text-red-600"
+              )}
+            >
+              Home
+            </Link>
+            <Link 
+              href="/tv-shows" 
+              className={cn(
+                "text-sm font-medium hover:text-primary/80",
+                pathname === "/tv-shows" && "text-red-600"
+              )}
+            >
+              TV Shows
+            </Link>
+            <Link 
+              href="/movies" 
+              className={cn(
+                "text-sm font-medium hover:text-primary/80",
+                pathname === "/movies" && "text-red-600"
+              )}
+            >
+              Movies
+            </Link>
+            <Link 
+              href="/new" 
+              className={cn(
+                "text-sm font-medium hover:text-primary/80",
+                pathname === "/new" && "text-red-600"
+              )}
+            >
+              New & Popular
+            </Link>
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon">
-            <Search className="h-5 w-5" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <Bell className="h-5 w-5" />
-          </Button>
-          <Button variant="ghost" size="icon">
-            <User className="h-5 w-5" />
-          </Button>
+          <Link href="/search">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className={cn(pathname === "/search" && "text-red-600")}
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/notifications">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className={cn(pathname === "/notifications" && "text-red-600")}
+            >
+              <Bell className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/account">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className={cn(pathname === "/account" && "text-red-600")}
+            >
+              <User className="h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
