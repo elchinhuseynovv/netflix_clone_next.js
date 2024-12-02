@@ -5,9 +5,11 @@ import { Search as SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { getAllMovies } from "@/lib/data";
 import MovieList from "@/components/movie-list";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Search() {
   const [searchQuery, setSearchQuery] = useState("");
+  const { t } = useLanguage();
   const allContent = getAllMovies();
   
   const filteredContent = allContent.filter(item => 
@@ -23,7 +25,7 @@ export default function Search() {
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
           <Input
             type="text"
-            placeholder="Search titles, genres, or descriptions..."
+            placeholder={t("common.searchPlaceholder")}
             className="pl-10 h-12"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -32,7 +34,7 @@ export default function Search() {
         
         {searchQuery && (
           <MovieList
-            title={`Search Results ${filteredContent.length ? `(${filteredContent.length})` : ''}`}
+            title={`${t("common.searchResults")} ${filteredContent.length ? `(${filteredContent.length})` : ''}`}
             movies={filteredContent}
           />
         )}

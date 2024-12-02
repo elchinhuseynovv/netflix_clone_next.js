@@ -5,10 +5,13 @@ import { Play, Info, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { featuredMovies } from "@/lib/data";
+import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -28,6 +31,10 @@ export default function Hero() {
     setCurrent((prev) => (prev + 1) % featuredMovies.length);
   };
 
+  const currentMovie = featuredMovies[current];
+  const movieTitle = t(`movies.${currentMovie.id}.title`) || currentMovie.title;
+  const movieDescription = t(`movies.${currentMovie.id}.description`) || currentMovie.description;
+
   return (
     <div className="relative h-[100vh] w-full overflow-hidden">
       <AnimatePresence mode="wait">
@@ -40,8 +47,8 @@ export default function Hero() {
           className="absolute inset-0"
         >
           <img
-            src={featuredMovies[current].thumbnail}
-            alt={featuredMovies[current].title}
+            src={currentMovie.thumbnail}
+            alt={movieTitle}
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
@@ -75,17 +82,19 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl space-y-4"
         >
-          <h1 className="text-4xl md:text-6xl font-bold">{featuredMovies[current].title}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold">{movieTitle}</h1>
           <p className="text-lg text-gray-200 max-w-2xl">
-            {featuredMovies[current].description}
+            {movieDescription}
           </p>
           <div className="flex gap-4 pt-4">
             <Button size="lg" className="font-semibold">
-              <Play className="mr-2 h-5 w-5" /> Play
+              <Play className="mr-2 h-5 w-5" /> {t("common.play")}
             </Button>
-            <Button size="lg" variant="outline" className="font-semibold">
-              <Info className="mr-2 h-5 w-5" /> More Info
-            </Button>
+            <Link href={`/movie/${currentMovie.id}`}>
+              <Button size="lg" variant="outline" className="font-semibold">
+                <Info className="mr-2 h-5 w-5" /> {t("common.moreInfo")}
+              </Button>
+            </Link>
           </div>
         </motion.div>
 

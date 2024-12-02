@@ -1,15 +1,16 @@
 "use client";
 
-import { useEffect } from "react";
 import { getAllMovies } from "@/lib/data";
 import MovieList from "@/components/movie-list";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function TVShows() {
+  const { t } = useLanguage();
   const tvShows = getAllMovies().filter(movie => movie.type === "series");
   const categories = [
     {
       id: "all-shows",
-      title: "All TV Shows",
+      title: t("common.allTvShows"),
       movies: tvShows
     }
   ];

@@ -6,10 +6,13 @@ import { Play, Search, Bell, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/lib/i18n/language-context";
+import LanguageSwitcher from "./language-switcher";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +41,7 @@ export default function Navbar() {
                 pathname === "/" && "text-red-600"
               )}
             >
-              Home
+              {t("common.home")}
             </Link>
             <Link 
               href="/tv-shows" 
@@ -47,7 +50,7 @@ export default function Navbar() {
                 pathname === "/tv-shows" && "text-red-600"
               )}
             >
-              TV Shows
+              {t("common.tvShows")}
             </Link>
             <Link 
               href="/movies" 
@@ -56,7 +59,7 @@ export default function Navbar() {
                 pathname === "/movies" && "text-red-600"
               )}
             >
-              Movies
+              {t("common.movies")}
             </Link>
             <Link 
               href="/new" 
@@ -65,7 +68,7 @@ export default function Navbar() {
                 pathname === "/new" && "text-red-600"
               )}
             >
-              New & Popular
+              {t("common.newAndPopular")}
             </Link>
           </div>
         </div>
@@ -88,6 +91,7 @@ export default function Navbar() {
               <Bell className="h-5 w-5" />
             </Button>
           </Link>
+          <LanguageSwitcher />
           <Link href="/account">
             <Button 
               variant="ghost" 

@@ -3,50 +3,73 @@ import { Movie } from "./types";
 export const featuredMovies: Movie[] = [
   {
     id: "1",
-    title: "Kızılcık Şerbeti",
-    thumbnail: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1920",
-    description: "A compelling Turkish drama that explores family dynamics and societal expectations through the story of two different families united by marriage.",
-    genre: ["Drama", "Family"],
-    rating: "TV-14",
-    year: 2024,
-    duration: "2 Seasons",
-    type: "series",
-    stars: 4.7,
-    trailerUrl: "https://www.youtube.com/embed/example1",
-    director: "Cem Karcı",
-    cast: ["Evrim Alasya", "Sıla Türkoğlu", "Barış Kılıç"],
-    releaseDate: "January 1, 2024",
-    ratingDistribution: [
-      { stars: 5, percentage: 65 },
-      { stars: 4, percentage: 25 },
-      { stars: 3, percentage: 7 },
-      { stars: 2, percentage: 2 },
-      { stars: 1, percentage: 1 },
-    ],
-  },
-  {
-    id: "2",
-    title: "Bahar",
-    thumbnail: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=1920",
-    description: "A heartwarming series about new beginnings and personal growth, following the journey of a woman named Bahar as she navigates life's challenges.",
+    title: "Aşk ve Mavi",
+    thumbnail: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/346855242_6920099168017849_2259489078777419682_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=beJGw1fNpjQQ7kNvgGJMAAt&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=A7MV6m3M0gEBPSzQqWja7_w&oh=00_AYAMJPPapB8_fUVG8WTl0DBa4bF2M2b6yaPITRHJV9u3Pg&oe=6753AFA8",
+    description: "Bir aşk hikayesi etrafında gelişen, geleneksel değerler ve modern yaşamın çatışmasını anlatan dram.",
     genre: ["Drama", "Romance"],
     rating: "TV-14",
     year: 2024,
-    duration: "1 Season",
+    duration: "120m",
     type: "series",
     stars: 4.8,
+    trailerUrl: "https://www.youtube.com/embed/example1",
+    director: "Mehmet Yılmaz",
+    cast: ["Ayça Bingöl", "Kerem Bürsin", "Özge Gürel"],
+    releaseDate: "March 15, 2024",
+    ratingDistribution: [
+      { stars: 5, percentage: 75 },
+      { stars: 4, percentage: 20 },
+      { stars: 3, percentage: 3 },
+      { stars: 2, percentage: 1 },
+      { stars: 1, percentage: 1 }
+    ]
+  },
+  {
+    id: "2",
+    title: "İstanbul Hatırası",
+    thumbnail: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&auto=format&fit=crop",
+    description: "İstanbul'un tarihi dokusunda geçen, üç kuşağın hikayesini anlatan etkileyici bir dram.",
+    genre: ["Drama", "History"],
+    rating: "TV-MA",
+    year: 2024,
+    duration: "2h 15m",
+    type: "movie",
+    stars: 4.9,
     trailerUrl: "https://www.youtube.com/embed/example2",
-    director: "Ali Bilgin",
-    cast: ["Demet Özdemir", "Halit Ergenç", "Serenay Sarıkaya"],
-    releaseDate: "February 15, 2024",
+    director: "Çağan Irmak",
+    cast: ["Haluk Bilginer", "Demet Evgar", "Çağatay Ulusoy"],
+    releaseDate: "February 1, 2024",
+    ratingDistribution: [
+      { stars: 5, percentage: 80 },
+      { stars: 4, percentage: 15 },
+      { stars: 3, percentage: 3 },
+      { stars: 2, percentage: 1 },
+      { stars: 1, percentage: 1 }
+    ]
+  },
+  {
+    id: "3",
+    title: "Kara Sevda",
+    thumbnail: "https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&auto=format&fit=crop",
+    description: "İmkansız bir aşk hikayesi etrafında gelişen, sosyal sınıf farklılıklarını ele alan dram dizisi.",
+    genre: ["Drama", "Romance"],
+    rating: "TV-14",
+    year: 2024,
+    duration: "45m",
+    type: "series",
+    stars: 4.7,
+    trailerUrl: "https://www.youtube.com/embed/example3",
+    director: "Hilal Saral",
+    cast: ["Burak Özçivit", "Neslihan Atagül", "Kaan Urgancıoğlu"],
+    releaseDate: "January 15, 2024",
     ratingDistribution: [
       { stars: 5, percentage: 70 },
-      { stars: 4, percentage: 20 },
-      { stars: 3, percentage: 7 },
-      { stars: 2, percentage: 2 },
-      { stars: 1, percentage: 1 },
-    ],
-  },
+      { stars: 4, percentage: 25 },
+      { stars: 3, percentage: 3 },
+      { stars: 2, percentage: 1 },
+      { stars: 1, percentage: 1 }
+    ]
+  }
 ];
 
 export const movieCategories = [
@@ -55,82 +78,88 @@ export const movieCategories = [
     title: "Trending Now",
     movies: [
       {
-        id: "3",
-        title: "Kızıl Goncalar",
-        thumbnail: "https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?auto=format&fit=crop&q=80&w=1920",
-        description: "A powerful drama series that weaves together love, betrayal, and redemption in contemporary Turkey.",
-        genre: ["Drama", "Romance", "Mystery"],
+        id: "4",
+        title: "Mucize Doktor",
+        thumbnail: "https://images.unsplash.com/photo-1584515933487-779824d29309?w=800&auto=format&fit=crop",
+        description: "Otizmli genç bir doktorun hastane yaşamındaki zorluklarla mücadelesini anlatan dizi.",
+        genre: ["Drama", "Medical"],
         rating: "TV-14",
         year: 2024,
-        duration: "1 Season",
-        type: "series",
-        stars: 4.6,
-        trailerUrl: "https://www.youtube.com/embed/example3",
-        director: "Çağrı Vila Lostuvalı",
-        cast: ["Özge Gürel", "Burak Deniz", "Aslı Enver"],
-        releaseDate: "March 1, 2024",
-        ratingDistribution: [
-          { stars: 5, percentage: 60 },
-          { stars: 4, percentage: 30 },
-          { stars: 3, percentage: 7 },
-          { stars: 2, percentage: 2 },
-          { stars: 1, percentage: 1 },
-        ],
-      },
-      {
-        id: "4",
-        title: "Gönül Dağı",
-        thumbnail: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920",
-        description: "A touching series that explores life in rural Turkey, focusing on traditions, family bonds, and community spirit.",
-        genre: ["Drama", "Family"],
-        rating: "TV-PG",
-        year: 2024,
-        duration: "3 Seasons",
+        duration: "120m",
         type: "series",
         stars: 4.9,
         trailerUrl: "https://www.youtube.com/embed/example4",
-        director: "Yahya Samancı",
-        cast: ["Berk Atan", "Gülsim Ali", "Ecem Özkaya"],
-        releaseDate: "January 20, 2024",
+        director: "Yusuf Pirhasan",
+        cast: ["Taner Ölmez", "Sinem Ünsal", "Onur Tuna"],
+        releaseDate: "March 1, 2024",
         ratingDistribution: [
-          { stars: 5, percentage: 80 },
-          { stars: 4, percentage: 15 },
+          { stars: 5, percentage: 85 },
+          { stars: 4, percentage: 10 },
           { stars: 3, percentage: 3 },
           { stars: 2, percentage: 1 },
-          { stars: 1, percentage: 1 },
-        ],
-      },
-    ],
+          { stars: 1, percentage: 1 }
+        ]
+      }
+    ]
   },
   {
-    id: "new-releases",
+    id: "newReleases",
     title: "New Releases",
     movies: [
       {
         id: "5",
-        title: "Teşkilat",
-        thumbnail: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1920",
-        description: "An intense action-drama series following Turkey's National Intelligence Organization as they protect national security.",
-        genre: ["Action", "Drama", "Thriller"],
+        title: "Benim Adım Melek",
+        thumbnail: "https://images.unsplash.com/photo-1517732306149-e8f829eb588a?w=800&auto=format&fit=crop",
+        description: "Geleneksel değerlerle modern yaşamın çatışmasını anlatan, güçlü bir kadın hikayesi.",
+        genre: ["Drama", "Family"],
         rating: "TV-14",
         year: 2024,
-        duration: "4 Seasons",
+        duration: "45m",
         type: "series",
-        stars: 4.8,
+        stars: 4.6,
         trailerUrl: "https://www.youtube.com/embed/example5",
-        director: "Yağız Alp Akaydın",
-        cast: ["Çağlar Ertuğrul", "Deniz Baysal", "Mesut Akusta"],
-        releaseDate: "February 1, 2024",
+        director: "Cem Karcı",
+        cast: ["Nehir Erdoğan", "Kutsi", "Rabia Soytürk"],
+        releaseDate: "March 10, 2024",
         ratingDistribution: [
-          { stars: 5, percentage: 75 },
-          { stars: 4, percentage: 15 },
+          { stars: 5, percentage: 65 },
+          { stars: 4, percentage: 25 },
           { stars: 3, percentage: 7 },
           { stars: 2, percentage: 2 },
-          { stars: 1, percentage: 1 },
-        ],
+          { stars: 1, percentage: 1 }
+        ]
       }
-    ],
+    ]
   },
+  {
+    id: "tvShows",
+    title: "TV Shows",
+    movies: [
+      {
+        id: "6",
+        title: "Çukur",
+        thumbnail: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&auto=format&fit=crop",
+        description: "İstanbul'un tehlikeli mahallelerinden birinde geçen, bir ailenin güç mücadelesini anlatan dizi.",
+        genre: ["Action", "Crime", "Drama"],
+        rating: "TV-MA",
+        year: 2024,
+        duration: "120m",
+        type: "series",
+        stars: 4.8,
+        trailerUrl: "https://www.youtube.com/embed/example6",
+        director: "Sinan Öztürk",
+        cast: ["Aras Bulut İynemli", "Dilan Çiçek Deniz", "Erkan Kolçak Köstendil"],
+        releaseDate: "February 15, 2024",
+        ratingDistribution: [
+          { stars: 5, percentage: 75 },
+          { stars: 4, percentage: 20 },
+          { stars: 3, percentage: 3 },
+          { stars: 2, percentage: 1 },
+          { stars: 1, percentage: 1 }
+        ]
+      }
+    ]
+  }
 ];
 
 export function findMovieById(id: string): Movie | undefined {
@@ -156,7 +185,7 @@ export function findMovieReviews(id: string) {
         {
           author: "Mehmet Y.",
           rating: 5,
-          content: "The performances are outstanding, especially in emotional scenes.",
+          content: "Oyuncuların performansları muhteşem, özellikle duygusal sahnelerde çok etkileyici.",
           date: "March 15, 2024"
         }
       ]
@@ -167,7 +196,7 @@ export function findMovieReviews(id: string) {
         {
           author: "Ayşe K.",
           rating: 5,
-          content: "Beautiful cinematography that captures Turkey's stunning landscapes.",
+          content: "Görsel efektler ve sinematografi Türkiye'nin güzel manzaralarını mükemmel yansıtıyor.",
           date: "March 14, 2024"
         }
       ]
@@ -178,7 +207,7 @@ export function findMovieReviews(id: string) {
         {
           author: "Can B.",
           rating: 5,
-          content: "A masterpiece of storytelling that keeps you engaged.",
+          content: "Hikaye anlatımı çok başarılı, Türk kültürünü güzel bir şekilde yansıtıyor.",
           date: "March 16, 2024"
         }
       ]
@@ -189,7 +218,7 @@ export function findMovieReviews(id: string) {
         {
           author: "Zeynep A.",
           rating: 5,
-          content: "The musical score perfectly complements the emotional moments.",
+          content: "Müzikler duygusal sahnelerle mükemmel uyum sağlıyor, geleneksel Türk müziği unsurları harika.",
           date: "March 20, 2024"
         }
       ]
@@ -200,7 +229,7 @@ export function findMovieReviews(id: string) {
         {
           author: "Ali R.",
           rating: 5,
-          content: "Excellent direction that brings out the best in the cast.",
+          content: "Yönetmen, oyuncuların performanslarını çok iyi yönetmiş ve kültürel özellikleri başarıyla yansıtmış.",
           date: "March 19, 2024"
         }
       ]

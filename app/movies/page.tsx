@@ -2,13 +2,15 @@
 
 import { getAllMovies } from "@/lib/data";
 import MovieList from "@/components/movie-list";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Movies() {
+  const { t } = useLanguage();
   const movies = getAllMovies().filter(movie => movie.type === "movie");
   const categories = [
     {
       id: "all-movies",
-      title: "All Movies",
+      title: t("common.allMovies"),
       movies: movies
     }
   ];

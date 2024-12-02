@@ -2,8 +2,10 @@
 
 import { getAllMovies } from "@/lib/data";
 import MovieList from "@/components/movie-list";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function NewAndPopular() {
+  const { t } = useLanguage();
   const allContent = getAllMovies();
   
   // Get content from the last 2 years
@@ -16,12 +18,12 @@ export default function NewAndPopular() {
   const categories = [
     {
       id: "new-releases",
-      title: "New Releases",
+      title: t("common.newReleases"),
       movies: newReleases
     },
     {
-      id: "popular",
-      title: "Popular on Azeflix",
+      id: "trending",
+      title: t("common.trending"),
       movies: popular
     }
   ];

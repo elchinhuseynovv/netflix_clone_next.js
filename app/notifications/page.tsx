@@ -3,6 +3,7 @@
 import { Bell, Clock, Star, PlayCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getAllMovies } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 interface Notification {
   id: string;
@@ -14,31 +15,31 @@ interface Notification {
 }
 
 export default function Notifications() {
-  // Simulate notifications based on movies
+  const { t } = useLanguage();
   const movies = getAllMovies();
   const notifications: Notification[] = [
     {
       id: "1",
       type: "new",
-      title: "New Arrival",
-      message: `${movies[0].title} is now available to stream`,
-      date: "Just now",
+      title: t("common.newArrival"),
+      message: `${movies[0].title} ${t("common.isNowAvailable")}`,
+      date: t("common.justNow"),
       isRead: false
     },
     {
       id: "2",
       type: "recommendation",
-      title: "Recommended for You",
-      message: `Based on your watching history, you might like ${movies[1].title}`,
-      date: "2 hours ago",
+      title: t("common.recommendedForYou"),
+      message: `${t("common.basedOnHistory")} ${movies[1].title}`,
+      date: `2 ${t("common.hoursAgo")}`,
       isRead: false
     },
     {
       id: "3",
       type: "update",
-      title: "Continue Watching",
-      message: `New episode of ${movies[2].title} is available`,
-      date: "1 day ago",
+      title: t("common.continueWatching"),
+      message: `${t("common.newEpisodeAvailable")} ${movies[2].title} ${t("common.isAvailable")}`,
+      date: `1 ${t("common.daysAgo")}`,
       isRead: true
     }
   ];
@@ -60,8 +61,8 @@ export default function Notifications() {
     <main className="min-h-screen bg-background pt-24 px-4 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold">Notifications</h1>
-          <Button variant="ghost" size="sm">Mark all as read</Button>
+          <h1 className="text-2xl font-bold">{t("common.notifications")}</h1>
+          <Button variant="ghost" size="sm">{t("common.markAllAsRead")}</Button>
         </div>
         
         <div className="space-y-4">

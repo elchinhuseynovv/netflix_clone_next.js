@@ -7,6 +7,9 @@ import { Separator } from "@/components/ui/separator";
 import AccountOverview from "@/components/account/account-overview";
 import AccountBilling from "@/components/account/account-billing";
 import AccountProfile from "@/components/account/account-profile";
+import AccountNotifications from "@/components/account/account-notifications";
+import AccountMyList from "@/components/account/account-my-list";
+import AccountSettings from "@/components/account/account-settings";
 import { useState } from "react";
 
 export default function Account() {
@@ -15,9 +18,8 @@ export default function Account() {
   const menuItems = [
     { icon: User, label: "Account Overview", id: "overview" },
     { icon: CreditCard, label: "Billing & Plans", id: "billing" },
-    { icon: Film, label: "Viewing Activity", id: "activity" },
     { icon: Bell, label: "Notifications", id: "notifications" },
-    { icon: Heart, label: "My List", id: "list" },
+    { icon: Heart, label: "My List", id: "my-list" },
     { icon: Settings, label: "Settings", id: "settings" }
   ];
 
@@ -27,6 +29,12 @@ export default function Account() {
         return <AccountOverview />;
       case "billing":
         return <AccountBilling />;
+      case "notifications":
+        return <AccountNotifications />;
+      case "my-list":
+        return <AccountMyList />;
+      case "settings":
+        return <AccountSettings />;
       default:
         return <AccountOverview />;
     }
