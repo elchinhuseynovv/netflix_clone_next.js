@@ -13,6 +13,9 @@ interface MovieCastCrewProps {
 export default function MovieCastCrew({ movie }: MovieCastCrewProps) {
   const { t } = useLanguage();
 
+  const director = t(`movies.${movie.id}.director`) || movie.director;
+  const cast = t(`movies.${movie.id}.cast`) || movie.cast;
+
   return (
     <Card className="p-6">
       <h2 className="text-2xl font-semibold mb-6">{t("movie.castAndCrew")}</h2>
@@ -26,7 +29,7 @@ export default function MovieCastCrew({ movie }: MovieCastCrewProps) {
               <User className="w-6 h-6 text-muted-foreground" />
             </div>
             <div>
-              <div className="font-medium">{movie.director}</div>
+              <div className="font-medium">{director}</div>
               <div className="text-sm text-muted-foreground">{t("movie.director")}</div>
             </div>
           </div>
@@ -39,14 +42,14 @@ export default function MovieCastCrew({ movie }: MovieCastCrewProps) {
             <User className="w-5 h-5" /> {t("movie.cast")}
           </h3>
           <div className="grid gap-4">
-            {movie.cast.map((actor, index) => (
+            {cast.map((actor, index) => (
               <div key={index} className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-muted flex items-center justify-center">
                   <User className="w-6 h-6 text-muted-foreground" />
                 </div>
                 <div>
                   <div className="font-medium">{actor}</div>
-                  <div className="text-sm text-muted-foreground">Actor</div>
+                  <div className="text-sm text-muted-foreground">{t("movie.cast")}</div>
                 </div>
               </div>
             ))}

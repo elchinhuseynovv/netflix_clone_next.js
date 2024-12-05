@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 import { Movie } from "@/lib/types";
 import { useMovieTrailer } from "@/hooks/use-movie-trailer";
+import { useMoviePlayer } from "@/hooks/use-movie-player";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 interface MovieHeroProps {
@@ -15,6 +16,7 @@ interface MovieHeroProps {
 
 export default function MovieHero({ movie }: MovieHeroProps) {
   const { openTrailer } = useMovieTrailer();
+  const { startMovie } = useMoviePlayer();
   const { t } = useLanguage();
 
   const movieTitle = t(`movies.${movie.id}.title`) || movie.title;
@@ -55,13 +57,22 @@ export default function MovieHero({ movie }: MovieHeroProps) {
           <p className="text-lg text-gray-200 max-w-2xl">
             {movieDescription}
           </p>
-          <Button 
-            size="lg" 
-            onClick={() => openTrailer(movie)}
-            className="bg-red-600 hover:bg-red-700"
-          >
-            <Play className="mr-2 h-5 w-5" /> {t("common.watchTrailer")}
-          </Button>
+          <div className="flex gap-4">
+            <Button 
+              size="lg" 
+              onClick={() => startMovie(movie)}
+              className="bg-red-600 hover:bg-red-700"
+            >
+              <Play className="mr-2 h-5 w-5" /> {t("common.play")}
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => openTrailer(movie)}
+            >
+              <Play className="mr-2 h-5 w-5" /> {t("common.watchTrailer")}
+            </Button>
+          </div>
         </motion.div>
       </div>
     </div>

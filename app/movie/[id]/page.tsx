@@ -1,10 +1,12 @@
-import { findMovieById, getAllMovies } from "@/lib/data";
+import { findMovieById } from "@/lib/data";
 import MovieHero from "@/components/movie/movie-hero";
 import MovieTrailerDialog from "@/components/movie/movie-trailer-dialog";
+import MoviePlayerDialog from "@/components/movie/movie-player-dialog";
 import MovieDetails from "@/components/movie/movie-details";
 import MovieSidebar from "@/components/movie/movie-sidebar";
+import { getAllMovies } from "@/lib/data";
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const movies = getAllMovies();
   return movies.map((movie) => ({
     id: movie.id,
@@ -28,6 +30,7 @@ export default function MoviePage({ params }: { params: { id: string } }) {
       </div>
 
       <MovieTrailerDialog movie={movie} />
+      <MoviePlayerDialog movie={movie} />
     </main>
   );
 }

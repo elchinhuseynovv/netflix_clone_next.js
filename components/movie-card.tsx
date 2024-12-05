@@ -8,6 +8,7 @@ import { Rating } from "./ui/rating";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/language-context";
+import { useMoviePlayer } from "@/hooks/use-movie-player";
 
 interface MovieCardProps {
   movie: Movie;
@@ -15,6 +16,7 @@ interface MovieCardProps {
 
 export default function MovieCard({ movie }: MovieCardProps) {
   const { t } = useLanguage();
+  const { startMovie } = useMoviePlayer();
 
   const movieTitle = t(`movies.${movie.id}.title`) || movie.title;
   const movieDescription = t(`movies.${movie.id}.description`) || movie.description;
@@ -49,6 +51,7 @@ export default function MovieCard({ movie }: MovieCardProps) {
               size="sm" 
               variant="default"
               className="transition-colors hover:bg-red-600"
+              onClick={() => startMovie(movie)}
             >
               <Play className="w-4 h-4 mr-1" /> {t("common.play")}
             </Button>

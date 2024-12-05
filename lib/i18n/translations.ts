@@ -32,22 +32,63 @@ export const translations = {
       newEpisodeAvailable: "New episode of",
       isAvailable: "is available"
     },
-    settings: {
-      playbackSettings: "Playback Settings",
-      videoQuality: "Video Quality",
-      autoplayNext: "Autoplay next episode",
-      autoplayPreviews: "Autoplay previews",
-      autoplayDescription: "Automatically play the next episode",
-      previewsDescription: "Play previews while browsing",
-      languageSettings: "Language Settings",
-      displayLanguage: "Display Language",
-      audioPreference: "Audio Preference",
-      subtitleLanguage: "Subtitle Language",
-      downloadSettings: "Download Settings",
-      wifiOnly: "Wi-Fi Only",
-      wifiOnlyDescription: "Download only when connected to Wi-Fi",
-      downloadQuality: "Download Quality",
-      storageLocation: "Storage Location"
+    auth: {
+      welcomeBack: "Welcome back",
+      loginToContinue: "Log in to continue watching",
+      email: "Email",
+      password: "Password",
+      forgotPassword: "Forgot password?",
+      login: "Log in",
+      orContinueWith: "or continue with",
+      noAccount: "Don't have an account?",
+      signUp: "Sign up"
+    },
+    movie: {
+      releaseDate: "Release Date",
+      duration: "Duration",
+      type: "Type",
+      rating: "Rating",
+      castAndCrew: "Cast & Crew",
+      director: "Director",
+      cast: "Cast",
+      synopsis: "Synopsis",
+      reviews: "Reviews",
+      acting: "Acting",
+      visuals: "Visuals",
+      story: "Story",
+      soundtrack: "Soundtrack",
+      direction: "Direction",
+      basedOnReviews: "Based on {{count}} reviews",
+      movieType: {
+        movie: "Movie",
+        series: "TV Series"
+      }
+    },
+    movies: {
+      "1": {
+        title: "Kuruluş Osman",
+        description: "A historical series about the establishment of the Ottoman Empire and the struggles of Osman Bey.",
+        releaseDate: "November 20, 2019",
+        duration: "120 minutes",
+        director: "Metin Günay",
+        cast: ["Burak Özçivit", "Özge Törer", "Yiğit Uçan"]
+      },
+      "2": {
+        title: "Hercai",
+        description: "A love story between two young people trapped between vengeance and love in the mystical atmosphere of Cappadocia.",
+        releaseDate: "March 15, 2019",
+        duration: "120 minutes",
+        director: "Cem Karcı",
+        cast: ["Akın Akınözü", "Ebru Şahin", "Ayda Aksel"]
+      },
+      "3": {
+        title: "Mucize Doktor",
+        description: "The inspiring story of a young surgeon with autism spectrum disorder and savant syndrome.",
+        releaseDate: "September 12, 2019",
+        duration: "120 minutes",
+        director: "Yusuf Pirhasan",
+        cast: ["Taner Ölmez", "Sinem Ünsal", "Onur Tuna"]
+      }
     }
   },
   tr: {
@@ -83,22 +124,63 @@ export const translations = {
       newEpisodeAvailable: "Yeni bölüm:",
       isAvailable: "yayında"
     },
-    settings: {
-      playbackSettings: "Oynatma Ayarları",
-      videoQuality: "Video Kalitesi",
-      autoplayNext: "Sonraki bölümü otomatik oynat",
-      autoplayPreviews: "Önizlemeleri otomatik oynat",
-      autoplayDescription: "Bir sonraki bölümü otomatik olarak oynat",
-      previewsDescription: "Gezinirken önizlemeleri oynat",
-      languageSettings: "Dil Ayarları",
-      displayLanguage: "Görüntüleme Dili",
-      audioPreference: "Ses Tercihi",
-      subtitleLanguage: "Altyazı Dili",
-      downloadSettings: "İndirme Ayarları",
-      wifiOnly: "Sadece Wi-Fi",
-      wifiOnlyDescription: "Sadece Wi-Fi bağlantısında indir",
-      downloadQuality: "İndirme Kalitesi",
-      storageLocation: "Depolama Konumu"
+    auth: {
+      welcomeBack: "Tekrar Hoşgeldiniz",
+      loginToContinue: "İzlemeye devam etmek için giriş yapın",
+      email: "E-posta",
+      password: "Şifre",
+      forgotPassword: "Şifremi unuttum",
+      login: "Giriş Yap",
+      orContinueWith: "veya şununla devam et",
+      noAccount: "Hesabınız yok mu?",
+      signUp: "Kaydol"
+    },
+    movie: {
+      releaseDate: "Yayın Tarihi",
+      duration: "Süre",
+      type: "Tür",
+      rating: "Değerlendirme",
+      castAndCrew: "Oyuncular ve Ekip",
+      director: "Yönetmen",
+      cast: "Oyuncular",
+      synopsis: "Özet",
+      reviews: "Yorumlar",
+      acting: "Oyunculuk",
+      visuals: "Görsel Efektler",
+      story: "Hikaye",
+      soundtrack: "Müzik",
+      direction: "Yönetim",
+      basedOnReviews: "{{count}} yorum baz alınarak",
+      movieType: {
+        movie: "Film",
+        series: "Dizi"
+      }
+    },
+    movies: {
+      "1": {
+        title: "Kuruluş Osman",
+        description: "Osmanlı İmparatorluğu'nun kuruluş dönemini ve Osman Bey'in mücadelelerini anlatan tarihi dizi.",
+        releaseDate: "20 Kasım 2019",
+        duration: "120 dakika",
+        director: "Metin Günay",
+        cast: ["Burak Özçivit", "Özge Törer", "Yiğit Uçan"]
+      },
+      "2": {
+        title: "Hercai",
+        description: "Kapadokya'nın mistik atmosferinde geçen, intikam ve aşk arasında sıkışmış iki gencin hikayesi.",
+        releaseDate: "15 Mart 2019",
+        duration: "120 dakika",
+        director: "Cem Karcı",
+        cast: ["Akın Akınözü", "Ebru Şahin", "Ayda Aksel"]
+      },
+      "3": {
+        title: "Mucize Doktor",
+        description: "Otizm spektrum bozukluğu ve savant sendromu olan genç bir cerrahın hastane yaşamı.",
+        releaseDate: "12 Eylül 2019",
+        duration: "120 dakika",
+        director: "Yusuf Pirhasan",
+        cast: ["Taner Ölmez", "Sinem Ünsal", "Onur Tuna"]
+      }
     }
   },
   az: {
@@ -134,22 +216,63 @@ export const translations = {
       newEpisodeAvailable: "Yeni seriya:",
       isAvailable: "yayımdadır"
     },
-    settings: {
-      playbackSettings: "Oynatma Parametrləri",
-      videoQuality: "Video Keyfiyyəti",
-      autoplayNext: "Növbəti serianı avtomatik oynat",
-      autoplayPreviews: "Önbaxışları avtomatik oynat",
-      autoplayDescription: "Növbəti serianı avtomatik olaraq oynat",
-      previewsDescription: "Baxış zamanı önbaxışları oynat",
-      languageSettings: "Dil Parametrləri",
-      displayLanguage: "Görüntü Dili",
-      audioPreference: "Səs Üstünlüyü",
-      subtitleLanguage: "Altyazı Dili",
-      downloadSettings: "Yükləmə Parametrləri",
-      wifiOnly: "Yalnız Wi-Fi",
-      wifiOnlyDescription: "Yalnız Wi-Fi bağlantısı ilə yüklə",
-      downloadQuality: "Yükləmə Keyfiyyəti",
-      storageLocation: "Saxlama Yeri"
+    auth: {
+      welcomeBack: "Yenidən Xoş Gəlmisiniz",
+      loginToContinue: "İzləməyə davam etmək üçün daxil olun",
+      email: "E-poçt",
+      password: "Şifrə",
+      forgotPassword: "Şifrəni unutmusunuz?",
+      login: "Daxil ol",
+      orContinueWith: "və ya davam edin",
+      noAccount: "Hesabınız yoxdur?",
+      signUp: "Qeydiyyatdan keçin"
+    },
+    movie: {
+      releaseDate: "Yayım Tarixi",
+      duration: "Müddət",
+      type: "Növ",
+      rating: "Reytinq",
+      castAndCrew: "Aktyorlar və Heyət",
+      director: "Rejissor",
+      cast: "Aktyorlar",
+      synopsis: "Xülasə",
+      reviews: "Rəylər",
+      acting: "Aktyorluq",
+      visuals: "Vizual Effektlər",
+      story: "Hekayə",
+      soundtrack: "Musiqi",
+      direction: "Rejissorluq",
+      basedOnReviews: "{{count}} rəy əsasında",
+      movieType: {
+        movie: "Film",
+        series: "Serial"
+      }
+    },
+    movies: {
+      "1": {
+        title: "Quruluş Osman",
+        description: "Osmanlı İmperiyasının quruluş dövrünü və Osman bəyin mübarizələrini əks etdirən tarixi serial.",
+        releaseDate: "20 Noyabr 2019",
+        duration: "120 dəqiqə",
+        director: "Metin Günay",
+        cast: ["Burak Özçivit", "Özge Törer", "Yiğit Uçan"]
+      },
+      "2": {
+        title: "Hercai",
+        description: "Kapadokyanın mistik atmosferində keçən, intiqam və eşq arasında sıxışmış iki gəncin hekayəsi.",
+        releaseDate: "15 Mart 2019",
+        duration: "120 dəqiqə",
+        director: "Cem Karcı",
+        cast: ["Akın Akınözü", "Ebru Şahin", "Ayda Aksel"]
+      },
+      "3": {
+        title: "Mucize Doktor",
+        description: "Autizm spektr pozğunluğu və savant sindromu olan gənc bir cərrahın xəstəxana həyatı.",
+        releaseDate: "12 Sentyabr 2019",
+        duration: "120 dəqiqə",
+        director: "Yusuf Pirhasan",
+        cast: ["Taner Ölmez", "Sinem Ünsal", "Onur Tuna"]
+      }
     }
   }
 };

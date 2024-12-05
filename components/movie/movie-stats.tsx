@@ -11,10 +11,14 @@ interface MovieStatsProps {
 export default function MovieStats({ movie }: MovieStatsProps) {
   const { t } = useLanguage();
 
+  const movieType = t(`movie.movieType.${movie.type}`);
+  const movieDuration = t(`movies.${movie.id}.duration`) || movie.duration;
+  const movieReleaseDate = t(`movies.${movie.id}.releaseDate`) || movie.releaseDate;
+
   const stats = [
-    { icon: Calendar, label: t("movie.releaseDate"), value: movie.releaseDate },
-    { icon: Clock, label: t("movie.duration"), value: movie.duration },
-    { icon: Film, label: t("movie.type"), value: movie.type },
+    { icon: Calendar, label: t("movie.releaseDate"), value: movieReleaseDate },
+    { icon: Clock, label: t("movie.duration"), value: movieDuration },
+    { icon: Film, label: t("movie.type"), value: movieType },
     { icon: Star, label: t("movie.rating"), value: `${movie.stars}/5` },
   ];
 
